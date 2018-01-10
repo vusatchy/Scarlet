@@ -5,7 +5,7 @@ from datetime import datetime
 
 token = "396392020:AAGeG8wChwfs-t2gXmuh5-Kh67yupIOcpWk"
 master_id = 404995725
-
+print("start")
 bot = telebot.TeleBot(token)
 words_split = r"[\w']+"
 greeting_set = set(["привітайся", "скарлет"])
