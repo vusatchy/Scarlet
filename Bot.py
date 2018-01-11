@@ -18,13 +18,13 @@ am_right = set(["хіба", "я", "не", "правий"])
 def part_of_day_from_hour(hour):
     part_of_day = ""
     if (hour >= 6 and hour < 12):
-        part_of_day = "ранку "+str(hour)+" "
+        part_of_day = "ранку"
     elif (hour >= 12 and hour < 18):
-        part_of_day = "дня "+str(hour)+" "
+        part_of_day = "дня"
     elif (hour >= 18 and hour < 23):
-        part_of_day = "вечора "+str(hour)+" "
+        part_of_day = "вечора"
     elif (hour >= 23 or hour < 6):
-        part_of_day = "ночі "+str(hour)+" "
+        part_of_day = "ночі"
     return part_of_day
 
 
@@ -73,6 +73,7 @@ def hello_predicate(message):
 
 def hello(message, user_name):
     hour = datetime.fromtimestamp(message.date).time().hour
+    bot.send_message(message.chat.id, datetime.fromtimestamp(message.date))
     part_of_day = part_of_day_from_hour(hour)
     good = ""
     if (part_of_day == "ночі"):
