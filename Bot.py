@@ -18,13 +18,13 @@ am_right = set(["хіба", "я", "не", "правий"])
 def part_of_day_from_hour(hour):
     part_of_day = ""
     if (hour >= 6 and hour < 12):
-        part_of_day = "ранку"
+        part_of_day = "ранку "+str(hour)+" "
     elif (hour >= 12 and hour < 18):
-        part_of_day = "дня"
+        part_of_day = "дня "+str(hour)+" "
     elif (hour >= 18 and hour < 23):
-        part_of_day = "вечора"
+        part_of_day = "вечора "+str(hour)+" "
     elif (hour >= 23 or hour < 6):
-        part_of_day = "ночі"
+        part_of_day = "ночі "+str(hour)+" "
     return part_of_day
 
 
