@@ -3,7 +3,7 @@ import ConstantsAndUtils as cau
 
 
 class GreetingHandler(ah.AbstractHandler):
-    greeting_set = set(["привітайся", "скарлет"])
+    greeting_set = {"привітайся", "скарлет"}
 
     def predicate(self, message):
         return cau.in_set(message.text, self.greeting_set)

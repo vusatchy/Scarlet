@@ -3,7 +3,7 @@ import ConstantsAndUtils as cau
 
 
 class RightHandler(ah.AbstractHandler):
-    am_right = set(["хіба", "я", "не", "правий"])
+    am_right = {"хіба", "я", "не", "правий"}
 
     def predicate(self, message):
         return cau.in_set(message.text, self.am_right) and message.from_user.id == cau.master_id

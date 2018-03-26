@@ -3,7 +3,7 @@ import ConstantsAndUtils as cau
 
 
 class LoveHandle(ah.AbstractHandler):
-    love_set = set(["ти", "скарлет", "мене", "любиш"])
+    love_set = {"ти", "скарлет", "мене", "любиш"}
 
     def predicate(self, message):
         return cau.in_set(message.text, self.love_set)

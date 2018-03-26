@@ -6,13 +6,13 @@ words_split = r"[\w']+"
 
 def part_of_day_from_hour(hour):
     part_of_day = ""
-    if (hour >= 6 and hour < 12):
+    if 6 <= hour < 12:
         part_of_day = "ранку"
-    elif (hour >= 12 and hour < 18):
+    elif 12 <= hour < 18:
         part_of_day = "дня"
-    elif (hour >= 18 and hour < 23):
+    elif 18 <= hour < 23:
         part_of_day = "вечора"
-    elif (hour >= 23 or hour < 6):
+    elif hour >= 23 or hour < 6:
         part_of_day = "ночі"
     return part_of_day
 
