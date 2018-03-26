@@ -6,6 +6,7 @@ import ConstantsAndUtils as cau
 class ScheduleHandler(ah.AbstractHandler):
     am_right = {"скарлет", "дай", "розклад"}
 
+    # TODO: move it into some config file
     shedule = {"понеділок": [
         "11:50-13:10 Філософія(лек) (266)",
         "13:30-14:50 Оптика(лек) (365)",
