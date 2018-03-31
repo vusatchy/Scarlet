@@ -5,7 +5,7 @@ from text_query_handlers import HelloHandler as hh
 from text_query_handlers import RandomHandler as randh
 from text_query_handlers import LoveHandler as lh
 from text_query_handlers import ScheduleHandler as sh
-
+from text_query_handlers import PeriodicTaskHandler as pth
 
 class HandlersRegistration(object):
     handlers = []
@@ -18,6 +18,7 @@ class HandlersRegistration(object):
         self.handlers.append(hh.HelloHandler())
         self.handlers.append(randh.RandomHandle())
         self.handlers.append(lh.LoveHandle())
+        self.handlers.append(pth.PeriodicTaskHandler())
 
     def get_handlers(self):
         return self.handlers
