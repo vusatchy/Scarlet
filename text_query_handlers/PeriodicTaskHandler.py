@@ -26,19 +26,20 @@ class PeriodicTaskHandler(ah.AbstractHandler):
         if len(times) > 0:
             time = times[0]
             time_units = time.split(":")
-            hour = int(time_units[0]) - 3# remove magic number
+            hour = int(time_units[0]) - 3  # remove magic number
             minutes = time_units[1]
             time = str(hour) + ":" + minutes
         phrase = text
         phrases = re.findall("(\"\w+\")", text)
         if len(phrases) > 0:
-            phrase = phrases[0].replace('"',"")
+            phrase = phrases[0].replace('"', "")
         self.task_counter = self.task_counter + 1
         job = schedule.every()
         #job.minutes.do(task, chat_id, phrase, bot)
         job.day.at(time).do(task, chat_id, phrase, bot)
         self.tasks[self.task_counter] = job
-        bot.send_message(chat_id, "Задача збережена успішно ") #+ datetime.fromtimestamp(message.date).time().__str__())
+        bot.send_message(chat_id,
+                         "Задача збережена успішно ")  # + datetime.fromtimestamp(message.date).time().__str__())
 
     def task(self, chat_id, message, bot):
         bot.send_message(chat_id, message)
