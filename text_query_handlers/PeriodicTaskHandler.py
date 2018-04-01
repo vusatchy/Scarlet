@@ -25,10 +25,10 @@ class PeriodicTaskHandler(ah.AbstractHandler):
         times = re.findall("(\d{2}:\d{2})", text)
         if len(times) > 0:
             time = times[0]
-            time_units = int(time.split(":"))
-            hour  = time_units[0] - 3# remove magic number
+            time_units = time.split(":")
+            hour = int(time_units[0]) - 3# remove magic number
             minutes = time_units[1]
-            time = hour + ":" + minutes
+            time = str(hour) + ":" + minutes
         phrase = text
         phrases = re.findall("(\"\w+\")", text)
         if len(phrases) > 0:
