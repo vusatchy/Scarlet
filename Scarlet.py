@@ -28,7 +28,7 @@ def handle_text(message):
             handler.handle(bot, message)
             return
     probability = random.randint(0, 100)
-    if probability >=75:
+    if probability >=98:
         phrase = phrases[random.randint(0, len(phrases) - 1)]
         bot.send_message(message.chat.id, phrase)
 
