@@ -28,9 +28,9 @@ class PeriodicTaskHandler(ah.AbstractHandler):
         phrase = text
         phrases = re.findall("(\"\w+\")", text)
         if len(phrases) > 0:
-            phrase = phrases[0].replace('"',"")+ " " + datetime.fromtimestamp(message.date).time().__str__()
+            phrase = phrases[0].replace('"',"")
         self.task_counter = self.task_counter + 1
-        job = schedule.every(0)
+        job = schedule.every()
         #job.minutes.do(task, chat_id, phrase, bot)
         job.day.at(time).do(task, chat_id, phrase, bot)
         self.tasks[self.task_counter] = job
