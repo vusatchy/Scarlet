@@ -34,7 +34,7 @@ class PeriodicTaskHandler(ah.AbstractHandler):
         #job.minutes.do(task, chat_id, phrase, bot)
         job.day.at(time).do(task, chat_id, phrase, bot)
         self.tasks[self.task_counter] = job
-        bot.send_message(chat_id, "Задача збережена успішно")
+        bot.send_message(chat_id, "Задача збережена успішно " + datetime.fromtimestamp(message.date).time().__str__())
 
     def task(self, chat_id, message, bot):
         bot.send_message(chat_id, message)
