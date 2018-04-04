@@ -26,7 +26,7 @@ class PeriodicTaskHandler(ah.AbstractHandler):
         if len(times) > 0:
             time = times[0]
             time_units = time.split(":")
-            hour = int(time_units[0]) - 3  # remove magic number
+            hour = int(time_units[0])  # remove magic number
             minutes = time_units[1]
             time = str(hour) + ":" + minutes
         phrase = text
