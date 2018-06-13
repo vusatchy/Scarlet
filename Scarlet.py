@@ -27,10 +27,10 @@ def handle_text(message):
         if handler.predicate(message):
             handler.handle(bot, message)
             return
-    probability = random.randint(0, 100)
-    if probability >=98:
-        phrase = phrases[random.randint(0, len(phrases) - 1)]
-        bot.send_message(message.chat.id, phrase)
+    #probability = random.randint(0, 100)
+    #if probability >=98:
+     #   phrase = phrases[random.randint(0, len(phrases) - 1)]
+      #  bot.send_message(message.chat.id, phrase)
 
 
 
